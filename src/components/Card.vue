@@ -4,7 +4,7 @@
     <h2 v-text="item.name"></h2>
     <p v-text="item.description"></p>
 
-    <button @click="$emit('delete-card')">Supprimer</button>
+    <button @click="$store.commit('DELETE_ARTICLES', index)">Supprimer</button>
   </div>
 </template>
 
