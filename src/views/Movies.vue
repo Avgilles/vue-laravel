@@ -1,6 +1,7 @@
 <template>
   <div class="blog">
     <h1>All movies</h1>
+    <Loader v-if="$store.state.loading"/>
     <Cardlist :items="movies"/>
 
   </div>
@@ -9,11 +10,12 @@
 <script>
 import Cardlist from "@/components/Cardlist";
 import {mapState, mapActions} from "vuex";
+import Loader from "@/components/Loader";
 
 export default {
   name: "Movies",
-  components: {Cardlist},
-  mounted(){
+  components: {Loader, Cardlist},
+  mounted() {
     this.getMovies();
   },
   computed: mapState([
@@ -29,5 +31,6 @@ export default {
 </script>
 
 <style scoped>
+
 
 </style>

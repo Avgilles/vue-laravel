@@ -1,7 +1,6 @@
 <template>
   <div class="card-container">
-    <Card @delete-card="handleDelete(index)" :key="item.name" v-for="(item, index) in items" :item="item"
-          :index="index"/>
+    <Card @delete-card="handleDelete(index)" :key="item.name" v-for="(item, index) in items" :item="item"/>
   </div>
 </template>
 

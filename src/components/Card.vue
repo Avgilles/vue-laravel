@@ -1,20 +1,25 @@
 <template>
-  <div class="card">
-    <div class="card-img" :style="{backgroundImage: 'url(https://picsum.photos/seed/'+index+1+'/500/300'}"></div>
+
+  <router-link class="card" :to="{name: 'ShowMovie', params :{id: item.id}}">
+    <div class="card-img" :style="img"></div>
     <h2 v-text="item.name"></h2>
     <p v-text="item.description"></p>
 
-    <button @click="$store.commit('DELETE_ARTICLES', index)">Supprimer</button>
-  </div>
+    <button @click="$store.commit('DELETE_MOVIES', index)">Supprimer</button>
+  </router-link>
 </template>
 
 <script>
 export default {
   name: "Card",
   props: [
-    'item',
-    'index'
+    'item'
   ],
+  computed: {
+    img(){
+      return {backgroundImage: 'url(https://picsum.photos/seed/'+this.item.id+'/500/300'}
+    }
+  }
 
 }
 </script>

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Movies from "@/views/Movies";
-import Article from "@/views/Blog/ShowArticle";
+import ShowMovie from "@/views/Blog/ShowMovie";
 
 Vue.use(VueRouter)
 
@@ -19,8 +19,8 @@ const routes = [
   },
   {
     path: '/movies/:id',
-    name :'Article',
-    component: Article
+    name :'ShowMovie',
+    component: ShowMovie
   },
 
   {
